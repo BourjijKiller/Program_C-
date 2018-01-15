@@ -1,0 +1,11 @@
+C:\Users\BourjijKiller\source\repos\T.P1\T.P1\bin\Debug\T.P1.exe.config
+C:\Users\BourjijKiller\source\repos\T.P1\T.P1\bin\Debug\T.P1.exe
+C:\Users\BourjijKiller\source\repos\T.P1\T.P1\bin\Debug\T.P1.pdb
+C:\Users\BourjijKiller\source\repos\T.P1\T.P1\obj\Debug\T.P1.Properties.Resources.resources
+C:\Users\BourjijKiller\source\repos\T.P1\T.P1\obj\Debug\T.P1.csproj.GenerateResource.Cache
+C:\Users\BourjijKiller\source\repos\T.P1\T.P1\obj\Debug\T.P1.csproj.CoreCompileInputs.cache
+C:\Users\BourjijKiller\source\repos\T.P1\T.P1\obj\Debug\T.P1.exe
+C:\Users\BourjijKiller\source\repos\T.P1\T.P1\obj\Debug\T.P1.pdb
+C:\Users\BourjijKiller\source\repos\T.P1\T.P1\obj\Debug\T.P1.RepertoireInterface.resources
+C:\Users\BourjijKiller\source\repos\T.P1\T.P1\obj\Debug\T.P1.FormAjout.resources
+C:\Users\BourjijKiller\source\repos\T.P1\T.P1\obj\Debug\T.P1.csprojResolveAssemblyReference.cache
