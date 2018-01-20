@@ -1,0 +1,11 @@
+C:\Users\BourjijKiller\source\repos\T.P2\T.P2\bin\Debug\T.P2.exe.config
+C:\Users\BourjijKiller\source\repos\T.P2\T.P2\bin\Debug\T.P2.exe
+C:\Users\BourjijKiller\source\repos\T.P2\T.P2\bin\Debug\T.P2.pdb
+C:\Users\BourjijKiller\source\repos\T.P2\T.P2\obj\Debug\T.P2.Properties.Resources.resources
+C:\Users\BourjijKiller\source\repos\T.P2\T.P2\obj\Debug\T.P2.Sport.resources
+C:\Users\BourjijKiller\source\repos\T.P2\T.P2\obj\Debug\T.P2.csproj.GenerateResource.Cache
+C:\Users\BourjijKiller\source\repos\T.P2\T.P2\obj\Debug\T.P2.csproj.CoreCompileInputs.cache
+C:\Users\BourjijKiller\source\repos\T.P2\T.P2\obj\Debug\T.P2.exe
+C:\Users\BourjijKiller\source\repos\T.P2\T.P2\obj\Debug\T.P2.pdb
+C:\Users\BourjijKiller\source\repos\T.P2\T.P2\obj\Debug\T.P2.FormAjout.resources
+C:\Users\BourjijKiller\source\repos\T.P2\T.P2\obj\Debug\T.P2.csprojResolveAssemblyReference.cache
