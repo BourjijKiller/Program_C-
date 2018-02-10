@@ -37,3 +37,28 @@ Voici les données utilisées pour les calculs :
 ---------------------------------------------------------
 
 ## OPÉRATIONS POSSIBLES
+
+L'utilisateur lance l'interface homme-machine représentée ci-dessous.
+
+![](https://image.noelshack.com/fichiers/2018/06/6/1518287829-capture.png)
+
+* Choix du nombre de kilomètre(s)
+* Choix du nombre de personne(s)
+* Choix du mode de transport (possibilité de choisir les 3)
+
+![](https://image.noelshack.com/fichiers/2018/06/6/1518288021-capture.png)
+
+--------------------------------------
+
+## NOTIONS UTILISÉES
+
+* _Héritage_
+* _Concepts objet_
+* _Interface .NET_
+* _Type [delegate](https://www.dotnetdojo.com/delegates-csharp/) (ou pointeur de fonctions)_
+
+--------------------------------------
+
+## LANCEMENT
+
+Exécuter le projet avec l'IDE `Visual Studio`

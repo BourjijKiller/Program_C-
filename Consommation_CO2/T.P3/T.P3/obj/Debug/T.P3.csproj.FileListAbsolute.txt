@@ -1,0 +1,10 @@
+C:\Users\BourjijKiller\source\repos\T.P3\T.P3\bin\Debug\T.P3.exe.config
+C:\Users\BourjijKiller\source\repos\T.P3\T.P3\bin\Debug\T.P3.exe
+C:\Users\BourjijKiller\source\repos\T.P3\T.P3\bin\Debug\T.P3.pdb
+C:\Users\BourjijKiller\source\repos\T.P3\T.P3\obj\Debug\T.P3.csprojResolveAssemblyReference.cache
+C:\Users\BourjijKiller\source\repos\T.P3\T.P3\obj\Debug\T.P3.ConsoC02.resources
+C:\Users\BourjijKiller\source\repos\T.P3\T.P3\obj\Debug\T.P3.Properties.Resources.resources
+C:\Users\BourjijKiller\source\repos\T.P3\T.P3\obj\Debug\T.P3.csproj.GenerateResource.Cache
+C:\Users\BourjijKiller\source\repos\T.P3\T.P3\obj\Debug\T.P3.csproj.CoreCompileInputs.cache
+C:\Users\BourjijKiller\source\repos\T.P3\T.P3\obj\Debug\T.P3.exe
+C:\Users\BourjijKiller\source\repos\T.P3\T.P3\obj\Debug\T.P3.pdb
