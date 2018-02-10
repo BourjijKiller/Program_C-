@@ -51,6 +51,7 @@
             this.textBox_matiereSaisie = new System.Windows.Forms.TextBox();
             this.label_matiereSaisie = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button_AjoutMat = new System.Windows.Forms.Button();
             this.groupBox_Type.SuspendLayout();
             this.groupBox_matiere.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_densite)).BeginInit();
@@ -299,12 +300,25 @@
             this.label1.Text = "Ajout d\'une matière";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // button_AjoutMat
+            // 
+            this.button_AjoutMat.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_AjoutMat.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button_AjoutMat.Location = new System.Drawing.Point(144, 591);
+            this.button_AjoutMat.Name = "button_AjoutMat";
+            this.button_AjoutMat.Size = new System.Drawing.Size(850, 52);
+            this.button_AjoutMat.TabIndex = 15;
+            this.button_AjoutMat.Text = "Ajouter l\'article";
+            this.button_AjoutMat.UseVisualStyleBackColor = true;
+            this.button_AjoutMat.Click += new System.EventHandler(this.button_AjoutMat_Click);
+            // 
             // FormAjout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1130, 606);
+            this.ClientSize = new System.Drawing.Size(1130, 675);
+            this.Controls.Add(this.button_AjoutMat);
             this.Controls.Add(this.groupBox_matiere);
             this.Controls.Add(this.comboBox_dyn_matiere3);
             this.Controls.Add(this.comboBox_dyn_matiere2);
@@ -319,6 +333,8 @@
             this.Controls.Add(this.groupBox_Type);
             this.Controls.Add(this.label_ArticleType);
             this.Controls.Add(this.label_titre);
+            this.MaximumSize = new System.Drawing.Size(1148, 722);
+            this.MinimumSize = new System.Drawing.Size(1148, 722);
             this.Name = "FormAjout";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ajout d\'un article";
@@ -356,5 +372,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numericUpDown_densite;
+        private System.Windows.Forms.Button button_AjoutMat;
     }
 }

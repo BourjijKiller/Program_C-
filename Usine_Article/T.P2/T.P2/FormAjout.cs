@@ -19,6 +19,8 @@ namespace T.P2
         NumericUpDown numericUpDown_numero = new NumericUpDown();
 
         Usine usine;
+        Usine usine2 = new Usine();
+        Usine usine3 = new Usine();
 
         public FormAjout(Usine usine)
         {
@@ -30,29 +32,84 @@ namespace T.P2
             updateComboBox();
             disabledControls();
         }
+
+        /**
+         * Méthode permettant de cloner les matières pour les listes box
+         */
+        public void usineMatiereCloner()
+        {
+            foreach (Matiere matiere in this.usine.contenuMatiere())
+            {
+                if(!this.usine2.contenuMatiere().Contains(matiere))
+                    usine2.addMatiere(matiere);
+                if (!this.usine3.contenuMatiere().Contains(matiere))
+                    usine3.addMatiere(matiere);
+            }
+        }
+
+        /**
+         * Méthode permettant de vider les champs après ajout d'un article
+         */
+        public void clearForm()
+        {
+            foreach(Control c in this.Controls)
+            {
+                if(c.GetType() == typeof(TextBox))
+                {
+                    TextBox t = (TextBox)c;
+                    t.Clear();
+                }
+
+                if(c.GetType() == typeof(NumericUpDown))
+                {
+                    NumericUpDown n = (NumericUpDown)c;
+                    if (n.Visible == true)
+                        n.Value = 0;
+                }
+
+                clearControls();
+                disabledControls();
+            }
+        }
+
         
         /*
-         * Problème --> Les 3 comboBoxs sont liées car elles pointes toutes sur la même usine (Cloner usine...)
          * Méthode permettant de mettre à jour le contenu des ComboBox matière en fonction des ajouts
         */
         private void updateComboBox()
         {
-            foreach(Control c in this.Controls)
+            usineMatiereCloner();
+            foreach (Control c in this.Controls)
             {
                 if(c.GetType() == typeof(ComboBox))
                 {
                     ComboBox comboBox = (ComboBox)c;
                     if (comboBox.Name.StartsWith("comboBox"))
                     {
-                        comboBox.DisplayMember = "getMatiere";
-                        comboBox.DataSource = usine.contenuMatiere();
+                        if(comboBox.Name.EndsWith("re"))
+                        {
+                            comboBox.DisplayMember = "getMatiere";
+                            comboBox.DataSource = usine.contenuMatiere();
+                        }
+
+                        else if (comboBox.Name.EndsWith("2"))
+                        {
+                            comboBox.DisplayMember = "getMatiere";
+                            comboBox.DataSource = usine2.contenuMatiere();
+                        }
+
+                        else
+                        {
+                            comboBox.DisplayMember = "getMatiere";
+                            comboBox.DataSource = usine3.contenuMatiere();
+                        }
                     }
                 }
             }
         }
 
         /*
-         * Fonction permettant de cacher les contrôles dynamiques*
+         * Fonction permettant de cacher les contrôles dynamiques
         */
 
         private void clearControls()
@@ -154,6 +211,10 @@ namespace T.P2
             }
         }
 
+        /*
+         * Ajout d'une matière
+        */
+
         private void Btn_AjoutMatiere_Click(object sender, EventArgs e)
         {
             DialogResult rep = MessageBox.Show("Ajouter la matière " + this.textBox_matiereSaisie.Text + " ?", "Confirmation matière", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -166,6 +227,7 @@ namespace T.P2
                         MessageBox.Show("Matière ajoutée ! ", "Succès ajout", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.textBox_matiereSaisie.Clear();
                         this.numericUpDown_densite.Value = 0;
+                        updateComboBox();
                     }
 
                     else
@@ -175,6 +237,72 @@ namespace T.P2
                 case DialogResult.No:
                     break;
             }
+        }
+
+        /**
+         * Ajoute l'article dans l'usine
+         */
+        private void button_AjoutMat_Click(object sender, EventArgs e)
+        {
+            DialogResult rep = MessageBox.Show("Ajouter l'article " + this.textBox_Nom.Text + " d'id [" + this.textBox_id.Text + "] ?", "Confirmation d'ajout dans l'usine", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            switch (rep)
+            {
+                case DialogResult.Yes:
+                    if(verifyFields())
+                    {
+                        Matiere mat1 = (Matiere)this.comboBox_matiere.SelectedItem;
+                        Matiere mat2 = (Matiere)this.comboBox_dyn_matiere2.SelectedItem;
+                        Matiere mat3 = (Matiere)this.comboBox_dyn_matiere3.SelectedItem;
+
+                        if (this.rdButton_Foot.Checked)
+                            usine.addArticle(new BallonFoot(Convert.ToInt16(this.textBox_id.Text), this.textBox_Nom.Text, this.textBox_forme.Text, new Matiere(mat1.getNomMatiere, Convert.ToDouble(mat1.getDensiteMatiere)), new Matiere(mat2.getNomMatiere, Convert.ToDouble(mat2.getDensiteMatiere))));
+                        else if (this.rdButton_Golf.Checked)
+                            usine.addArticle(new ClubGolf(Convert.ToInt16(this.textBox_id.Text), this.textBox_Nom.Text, this.textBox_forme.Text, new Matiere(mat1.getNomMatiere, Convert.ToDouble(mat1.getDensiteMatiere)), Convert.ToInt16(this.numericUpDown_numero.Value)));
+                        else
+                            usine.addArticle(new PlancheVoile(Convert.ToInt16(this.textBox_id.Text), this.textBox_Nom.Text, this.textBox_forme.Text, new Matiere(mat1.getNomMatiere, Convert.ToDouble(mat2.getDensiteMatiere)), new Matiere(mat2.getNomMatiere, Convert.ToDouble(mat2.getDensiteMatiere)), new Matiere(mat3.getNomMatiere, Convert.ToDouble(mat3.getDensiteMatiere))));
+                        MessageBox.Show("L'article a bien été ajouté ! ", "Succès ajout", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.rdButton_Foot.Checked = false;
+                        this.rdButton_Golf.Checked = false;
+                        this.rdButton_Voile.Checked = false;
+                        clearForm();
+                    }
+
+                    else
+                        MessageBox.Show("Merci de renseigner tout les champs !!!", "ERREUR FORM", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                case DialogResult.No:
+                    break;
+            }
+        }
+
+        /**
+         * Méthode vérifiant que tout les champs nécessaires à l'ajout d'un article sont bien renseignés
+         */
+        private Boolean verifyFields()
+        {
+            Boolean isOk = false;
+            foreach(Control c in this.Controls)
+            {
+                if (c.GetType() == typeof(TextBox))
+                {
+                    TextBox textBox = (TextBox)c;
+                    if (textBox.Visible == true && !String.IsNullOrEmpty(textBox.Text))
+                        isOk = true;
+                    else
+                        isOk = false;
+                }
+                   
+                else if (c.GetType() == typeof(ComboBox))
+                {
+                    ComboBox comboBox = (ComboBox)c;
+                    if (comboBox.Visible == true && !String.IsNullOrEmpty(comboBox.Text))
+                        isOk = true;
+                    else
+                        isOk = false;
+                }
+            }
+
+            return isOk;
         }
     }
 }

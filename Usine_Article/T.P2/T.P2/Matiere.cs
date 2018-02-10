@@ -21,7 +21,23 @@ namespace T.P2
         {
             get
             {
-                return this.nom + " (" + this.densite + ")";
+                return "[" + this.nom + "] --> " + "(" + this.densite + ")";
+            }
+        }
+
+        public string getNomMatiere
+        {
+            get
+            {
+                return this.nom;
+            }
+        }
+
+        public double getDensiteMatiere
+        {
+            get
+            {
+                return this.densite;
             }
         }
   

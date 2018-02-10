@@ -29,8 +29,8 @@ L'utilisateur peut donc ajouter autant d'article qu'il le souhaite, en précisan
 ![](https://image.noelshack.com/fichiers/2018/03/6/1516487406-capture2.png)
 
 * Ajout de matières personnalisées
-* Ajout d'articles de sport 		**_[EN DÉVELOPPEMENT]_**
-* Suppression d'articles sélectionnés depuis le panier 		**_[EN DÉVELOPPEMENT]_**
+* Ajout d'articles de sport
+* Suppression d'articles sélectionnés depuis le panier
 
 L'application contient donc
 1. Un formulaire dit **d'entrée** permettant l'affichage et la suppression d'articles
@@ -55,6 +55,6 @@ Exécuter le projet avec l'IDE `Visual Studio`
 
 --------------------------------------
 
-#### AVANCEMENT --> 65%
+#### AVANCEMENT --> 100% [TERMINÉ ET FONCTIONNELLE]
 
-_Dernière modification le 20/01/2018, 23:53_
+_Dernière modification le 10/02/2018, 11:35_

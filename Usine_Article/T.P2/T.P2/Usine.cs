@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace T.P2
 {
-    public class Usine : ICloneable
+    public class Usine
     {
         private BindingList<Article> usineAArticle;
         private BindingList<Matiere> usineMatiere;
@@ -46,11 +46,6 @@ namespace T.P2
         public BindingList<Matiere> contenuMatiere()
         {
             return this.usineMatiere;
-        }
-
-        public object Clone()
-        {
-            return this.MemberwiseClone();
         }
     }
 }

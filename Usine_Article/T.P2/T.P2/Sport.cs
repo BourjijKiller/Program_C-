@@ -29,21 +29,50 @@ namespace T.P2
             this.listBox_Article.MultiColumn = false;
         }
 
+        /**
+         * Ouvre le formulaire d'ajout d'article de sport et de matière
+         */
         private void Btn_Ajout_Click(object sender, EventArgs e)
         {
             Form FormAjout = new FormAjout(usine);
             FormAjout.Show();
         }
 
+        /**
+         * Permet de supprimer une matière
+         */
         private void Btn_Delete_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Article article = (Article)this.listBox_Article.SelectedItem;
+                DialogResult rep = MessageBox.Show("Supprimer l'article [" + article.getNom + "] ?", "Confirmation de suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (rep == DialogResult.Yes)
+                {
+                    usine.deleteArticle(article);
+                    MessageBox.Show("Article supprimé avec succès ! ", "SUCCES DE SUPPRESSION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
+                else
+                    MessageBox.Show("Suppression annulé", "ÉCHEC SUPPRESSION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            catch(NullReferenceException ex)
+            {
+                MessageBox.Show("Impossible de supprimer \r\n" +
+                    "L'usine est vide et ne contient aucun objet ! \r\n" +
+                    ex.Message, "EXCEPTION", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
+        /**
+         * Affiche les détails de l'article
+         */
         private void listBox_Article_DoubleClick(object sender, EventArgs e)
         {
             Article article = (Article)this.listBox_Article.SelectedItem;
-            DialogResult rep = MessageBox.Show("Afficher les détails pour l'article [" + article.getNom + " ?]", "Confirmation détails article ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult rep = MessageBox.Show("Afficher les détails pour l'article [" + article.getNom + "] ?", "Confirmation détails article ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(rep == DialogResult.Yes)
             {
                 if(article.action() == "Roule")
