@@ -1,0 +1,10 @@
+C:\Users\BourjijKiller\source\repos\T.P4\T.P4\bin\Debug\T.P4.exe.config
+C:\Users\BourjijKiller\source\repos\T.P4\T.P4\bin\Debug\T.P4.exe
+C:\Users\BourjijKiller\source\repos\T.P4\T.P4\bin\Debug\T.P4.pdb
+C:\Users\BourjijKiller\source\repos\T.P4\T.P4\obj\Debug\T.P4.Form1.resources
+C:\Users\BourjijKiller\source\repos\T.P4\T.P4\obj\Debug\T.P4.Properties.Resources.resources
+C:\Users\BourjijKiller\source\repos\T.P4\T.P4\obj\Debug\T.P4.csproj.GenerateResource.Cache
+C:\Users\BourjijKiller\source\repos\T.P4\T.P4\obj\Debug\T.P4.csproj.CoreCompileInputs.cache
+C:\Users\BourjijKiller\source\repos\T.P4\T.P4\obj\Debug\T.P4.exe
+C:\Users\BourjijKiller\source\repos\T.P4\T.P4\obj\Debug\T.P4.pdb
+C:\Users\BourjijKiller\source\repos\T.P4\T.P4\obj\Debug\T.P4.csprojResolveAssemblyReference.cache
