@@ -4,8 +4,8 @@
 
 ## DESCRIPTION
 
-Réalisation d'une application de type _WindowsForm_ en langage C# sous **visual studio 2017** permettant de simuler l'exécution de tâches par des personnes, que l'utilisateur peut créer, en utilisant les pointeurs de fonctions, ou plus communément appellé _**Delegage (Délégués)**_.
-Chaque personne créé possède un nom et un prénom.
+Réalisation d'une application de type _WindowsForm_ en langage C# sous **visual studio 2017** permettant de simuler l'exécution de tâches par des personnes, que l'utilisateur peut créer, en utilisant les pointeurs de fonctions, ou plus communément appellé _**Delegate (Délégués)**_.
+Chaque personne créée possède un nom et un prénom.
 Dans cette application, l'utilisateur peut créer 2 types de personne :
 * **Les administrateurs**
 * **Les ouvriers**
