@@ -1,0 +1,10 @@
+C:\Users\BourjijKiller\source\repos\T.P5\T.P5\bin\Debug\T.P5.exe.config
+C:\Users\BourjijKiller\source\repos\T.P5\T.P5\bin\Debug\T.P5.exe
+C:\Users\BourjijKiller\source\repos\T.P5\T.P5\bin\Debug\T.P5.pdb
+C:\Users\BourjijKiller\source\repos\T.P5\T.P5\obj\Debug\T.P5.csprojResolveAssemblyReference.cache
+C:\Users\BourjijKiller\source\repos\T.P5\T.P5\obj\Debug\T.P5.Properties.Resources.resources
+C:\Users\BourjijKiller\source\repos\T.P5\T.P5\obj\Debug\T.P5.csproj.GenerateResource.Cache
+C:\Users\BourjijKiller\source\repos\T.P5\T.P5\obj\Debug\T.P5.csproj.CoreCompileInputs.cache
+C:\Users\BourjijKiller\source\repos\T.P5\T.P5\obj\Debug\T.P5.exe
+C:\Users\BourjijKiller\source\repos\T.P5\T.P5\obj\Debug\T.P5.pdb
+C:\Users\BourjijKiller\source\repos\T.P5\T.P5\obj\Debug\T.P5.ThermostatForm.resources
