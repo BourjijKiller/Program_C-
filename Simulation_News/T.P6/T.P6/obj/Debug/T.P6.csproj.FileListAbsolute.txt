@@ -1,0 +1,10 @@
+C:\Users\BourjijKiller\source\repos\T.P6\T.P6\bin\Debug\T.P6.exe.config
+C:\Users\BourjijKiller\source\repos\T.P6\T.P6\bin\Debug\T.P6.exe
+C:\Users\BourjijKiller\source\repos\T.P6\T.P6\bin\Debug\T.P6.pdb
+C:\Users\BourjijKiller\source\repos\T.P6\T.P6\obj\Debug\T.P6.csprojResolveAssemblyReference.cache
+C:\Users\BourjijKiller\source\repos\T.P6\T.P6\obj\Debug\T.P6.Form1.resources
+C:\Users\BourjijKiller\source\repos\T.P6\T.P6\obj\Debug\T.P6.Properties.Resources.resources
+C:\Users\BourjijKiller\source\repos\T.P6\T.P6\obj\Debug\T.P6.csproj.GenerateResource.Cache
+C:\Users\BourjijKiller\source\repos\T.P6\T.P6\obj\Debug\T.P6.csproj.CoreCompileInputs.cache
+C:\Users\BourjijKiller\source\repos\T.P6\T.P6\obj\Debug\T.P6.exe
+C:\Users\BourjijKiller\source\repos\T.P6\T.P6\obj\Debug\T.P6.pdb
