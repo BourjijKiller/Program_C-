@@ -17,7 +17,7 @@ namespace T.P6
         public void ajouterData(Object sender, Args e)
         {
             this.Items.Add(e.getObj);
-            if (this.Items.Count > 0)
+            if (this.Items.Count == 1)
                 this.SelectedItem = e.getObj;
         }
 

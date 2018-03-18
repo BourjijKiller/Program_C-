@@ -26,12 +26,12 @@ namespace T.P6
         {
             get
             {
-                return this.topic;
+                return this.nom;
             }
 
             set
             {
-                this.topic = value;
+                this.nom = value;
             }
         }
     }

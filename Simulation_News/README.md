@@ -22,13 +22,15 @@ Durant tout le temps d'exécution du programme, les ComboBox seront abonnées au
 1. **_TopicFactory_**
 
 ```cs
-TopicFactory tf = new TopicFactory();
-tf.onAjouterTopic += ((ComboBoxHandler)comboBox_Topic_Delete).ajouterData;
-tf.onAjouterTopic += ((ComboBoxHandler)comboBox_topicAbo).ajouterData;
-tf.onAjouterTopic += ((ComboBoxHandler)comboBox_Topic_Envoyer).ajouterData;
-tf.onSupprimerTopic += ((ComboBoxHandler)comboBox_topicAbo).supprimerData;
-tf.onSupprimerTopic += ((ComboBoxHandler)comboBox_Topic_Delete).supprimerData;
-tf.onSupprimerTopic += ((ComboBoxHandler)comboBox_Topic_Envoyer).supprimerData;
+// Abonnement des événements sur toute les ComboBox lors de l'ajout de Topics
+this.tf.onAjouterTopic += ((ComboBoxHandler)comboBox_Topic_Delete).ajouterData;
+this.tf.onAjouterTopic += ((ComboBoxHandler)comboBox_topicAbo).ajouterData;
+this.tf.onAjouterTopic += ((ComboBoxHandler)comboBox_Topic_Envoyer).ajouterData;
+
+// Abonnement des événements sur toute les ComboBox lors de la suppression de Topics
+this.tf.onSupprimerTopic += ((ComboBoxHandler)comboBox_topicAbo).supprimerData;
+this.tf.onSupprimerTopic += ((ComboBoxHandler)comboBox_Topic_Delete).supprimerData;
+this.tf.onSupprimerTopic += ((ComboBoxHandler)comboBox_Topic_Envoyer).supprimerData;
 ```
 
 `onAjouterTopic` représente **l'événement** d'ajout d'un topic dans la liste **l**
@@ -38,6 +40,47 @@ tf.onSupprimerTopic += ((ComboBoxHandler)comboBox_Topic_Envoyer).supprimerData;
 `ajouterData` représente **l'écouteur**, associé aux ComboBox, d'ajout d'une donnée **d**
 
 `supprimerData` représente **l'écouteur**, associé aux ComboBox, de suppression d'une donnée **d**
+
+Afin d'afficher les saisies directement dans les ComboBox, on utilise un getter afin de récupérer le nom du Topic dans la _TopicFactory_ :
+
+```cs
+public string topic
+{
+    get
+    {
+        return this.nom;
+    }
+
+    set
+    {
+        this.nom = value;
+    }
+}
+
+this.comboBox_Topic_Delete.DisplayMember = "topic";
+this.comboBox_topicAbo.DisplayMember = "topic";
+this.comboBox_Topic_Envoyer.DisplayMember = "topic";
+```
+
+2. **_PersonneFactory_**
+
+```cs
+// Abonnement des événements sur toute les ComboBox lors de l'ajout d'une personne
+this.pf.onAjouterPersonne += ((ComboBoxHandler)comboBox_Personne_Delete).ajouterData;
+this.pf.onAjouterPersonne += ((ComboBoxHandler)comboBox_personneAbo).ajouterData;
+this.pf.onAjouterPersonne += ((ComboBoxHandler)comboBox_Personne_Envoyer).ajouterData;
+
+// Abonnement des événements sur toute les ComboBox lors de la suppression d'une personne
+this.pf.onSupprimerPersonne += ((ComboBoxHandler)comboBox_Personne_Delete).supprimerData;
+this.pf.onSupprimerPersonne += ((ComboBoxHandler)comboBox_personneAbo).supprimerData;
+this.pf.onSupprimerPersonne += ((ComboBoxHandler)comboBox_Topic_Envoyer).supprimerData;
+```
+
+`onAjouterPersonne` représente **l'événement** d'ajout d'une personne dans la liste **l**
+
+`onSupprimerPersonne` représente **l'événement** de suppression d'une personne de la liste **l**
+
+Les méthodes `ajouterData` et `supprimerData` ont la même fonction que pour la **TopicFactory**
 
 ---------------------------------------------------------------
 
@@ -54,6 +97,10 @@ L'utilisateur lance l'interface homme-machine représentée ci-dessous :
 5. Associé des news à un topic
 6. Associé un topic à une personne (principe de l'abonnement)
 7. Afficher les news en fonction de la personne sélectionné dans la liste déroulante associée
+
+Lorsque l'utilisateur ajoute un topic ou une personne, les ComboBox écoutent et affiche le résultat en fonction de l'événement déclenché :
+
+![](https://image.noelshack.com/fichiers/2018/11/7/1521404451-capture.png)
 
 ---------------------------------------------------------------
 
@@ -77,5 +124,6 @@ Exécuter le projet avec l'IDE `Visual Studio`
 | **Date** | **Version** | **% d'avancement** |
 |:---:|:---:|:---:|
 | _07/03/2018_ | **[0.0] DEV** | **50** |
+| _18/03/2018_ | **[0.1] DEV** | **70** |
 
-Dernière modification le _07/03/2018, 18h00_
+Dernière modification le _18/03/2018, 21h30_

@@ -40,11 +40,11 @@ namespace T.P6
         /// Permet de supprimer un topic de la liste. Déclenche l'eventHandler de suppression de topics
         /// </summary>
         /// <param name="topic"></param>
-        public void supprimerUnTopic(Topic topic)
+        public void supprimerUnTopic(Object topic)
         {
             Args args = new Args(topic);
             onSupprimerTopic(this, args);
-            this.topicFactory.Remove(topic);
+            this.topicFactory.Remove((Topic)topic);
         }
     }
 }
