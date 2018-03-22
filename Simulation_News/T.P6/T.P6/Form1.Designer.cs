@@ -33,27 +33,26 @@ namespace T.P6
             this.groupBox_Topic = new System.Windows.Forms.GroupBox();
             this.button_Envoyer_Topic = new System.Windows.Forms.Button();
             this.label_Topic = new System.Windows.Forms.Label();
+            this.comboBox_Topic_Envoyer = new T.P6.ComboBoxHandler();
             this.button_Supprimer_Topic = new System.Windows.Forms.Button();
+            this.comboBox_Topic_Delete = new T.P6.ComboBoxHandler();
             this.richTextBox_Topic = new System.Windows.Forms.RichTextBox();
             this.button_CreerTopic = new System.Windows.Forms.Button();
             this.textBox_Topic = new System.Windows.Forms.TextBox();
             this.groupBox_Personne = new System.Windows.Forms.GroupBox();
-            this.button_Envoyer_Personne = new System.Windows.Forms.Button();
             this.label_Personne = new System.Windows.Forms.Label();
+            this.comboBox_Personne_Envoyer = new T.P6.ComboBoxHandler();
             this.button_Supprimer_Personne = new System.Windows.Forms.Button();
+            this.comboBox_Personne_Delete = new T.P6.ComboBoxHandler();
             this.button_CreerPersonne = new System.Windows.Forms.Button();
             this.textBox_Personne = new System.Windows.Forms.TextBox();
             this.richTextBox_Personne = new System.Windows.Forms.RichTextBox();
             this.groupBox_Abonnement = new System.Windows.Forms.GroupBox();
             this.button_envoyerAbo = new System.Windows.Forms.Button();
             this.label_topicPersonne = new System.Windows.Forms.Label();
-            this.label_topicAbo = new System.Windows.Forms.Label();
             this.comboBox_personneAbo = new T.P6.ComboBoxHandler();
+            this.label_topicAbo = new System.Windows.Forms.Label();
             this.comboBox_topicAbo = new T.P6.ComboBoxHandler();
-            this.comboBox_Personne_Envoyer = new T.P6.ComboBoxHandler();
-            this.comboBox_Personne_Delete = new T.P6.ComboBoxHandler();
-            this.comboBox_Topic_Envoyer = new T.P6.ComboBoxHandler();
-            this.comboBox_Topic_Delete = new T.P6.ComboBoxHandler();
             this.groupBox_Topic.SuspendLayout();
             this.groupBox_Personne.SuspendLayout();
             this.groupBox_Abonnement.SuspendLayout();
@@ -85,6 +84,7 @@ namespace T.P6
             this.button_Envoyer_Topic.TabIndex = 7;
             this.button_Envoyer_Topic.Text = "Envoyer";
             this.button_Envoyer_Topic.UseVisualStyleBackColor = true;
+            this.button_Envoyer_Topic.Click += new System.EventHandler(this.button_Envoyer_Topic_Click);
             // 
             // label_Topic
             // 
@@ -97,6 +97,15 @@ namespace T.P6
             this.label_Topic.Text = "Topic";
             this.label_Topic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // comboBox_Topic_Envoyer
+            // 
+            this.comboBox_Topic_Envoyer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Topic_Envoyer.FormattingEnabled = true;
+            this.comboBox_Topic_Envoyer.Location = new System.Drawing.Point(280, 280);
+            this.comboBox_Topic_Envoyer.Name = "comboBox_Topic_Envoyer";
+            this.comboBox_Topic_Envoyer.Size = new System.Drawing.Size(193, 24);
+            this.comboBox_Topic_Envoyer.TabIndex = 5;
+            // 
             // button_Supprimer_Topic
             // 
             this.button_Supprimer_Topic.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -107,6 +116,15 @@ namespace T.P6
             this.button_Supprimer_Topic.Text = "Supprimer";
             this.button_Supprimer_Topic.UseVisualStyleBackColor = true;
             this.button_Supprimer_Topic.Click += new System.EventHandler(this.button_Supprimer_Topic_Click);
+            // 
+            // comboBox_Topic_Delete
+            // 
+            this.comboBox_Topic_Delete.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Topic_Delete.FormattingEnabled = true;
+            this.comboBox_Topic_Delete.Location = new System.Drawing.Point(31, 172);
+            this.comboBox_Topic_Delete.Name = "comboBox_Topic_Delete";
+            this.comboBox_Topic_Delete.Size = new System.Drawing.Size(193, 24);
+            this.comboBox_Topic_Delete.TabIndex = 3;
             // 
             // richTextBox_Topic
             // 
@@ -141,7 +159,6 @@ namespace T.P6
             // 
             // groupBox_Personne
             // 
-            this.groupBox_Personne.Controls.Add(this.button_Envoyer_Personne);
             this.groupBox_Personne.Controls.Add(this.label_Personne);
             this.groupBox_Personne.Controls.Add(this.comboBox_Personne_Envoyer);
             this.groupBox_Personne.Controls.Add(this.button_Supprimer_Personne);
@@ -156,26 +173,26 @@ namespace T.P6
             this.groupBox_Personne.TabStop = false;
             this.groupBox_Personne.Text = "Personne";
             // 
-            // button_Envoyer_Personne
-            // 
-            this.button_Envoyer_Personne.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Envoyer_Personne.Location = new System.Drawing.Point(74, 310);
-            this.button_Envoyer_Personne.Name = "button_Envoyer_Personne";
-            this.button_Envoyer_Personne.Size = new System.Drawing.Size(126, 37);
-            this.button_Envoyer_Personne.TabIndex = 10;
-            this.button_Envoyer_Personne.Text = "Envoyer";
-            this.button_Envoyer_Personne.UseVisualStyleBackColor = true;
-            // 
             // label_Personne
             // 
             this.label_Personne.AutoSize = true;
             this.label_Personne.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Personne.Location = new System.Drawing.Point(93, 252);
+            this.label_Personne.Location = new System.Drawing.Point(88, 276);
             this.label_Personne.Name = "label_Personne";
             this.label_Personne.Size = new System.Drawing.Size(90, 25);
             this.label_Personne.TabIndex = 9;
             this.label_Personne.Text = "Personne";
             this.label_Personne.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // comboBox_Personne_Envoyer
+            // 
+            this.comboBox_Personne_Envoyer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Personne_Envoyer.FormattingEnabled = true;
+            this.comboBox_Personne_Envoyer.Location = new System.Drawing.Point(40, 310);
+            this.comboBox_Personne_Envoyer.Name = "comboBox_Personne_Envoyer";
+            this.comboBox_Personne_Envoyer.Size = new System.Drawing.Size(193, 24);
+            this.comboBox_Personne_Envoyer.TabIndex = 8;
+            this.comboBox_Personne_Envoyer.SelectedIndexChanged += new System.EventHandler(this.comboBox_Personne_Envoyer_SelectedIndexChanged);
             // 
             // button_Supprimer_Personne
             // 
@@ -187,6 +204,15 @@ namespace T.P6
             this.button_Supprimer_Personne.Text = "Supprimer";
             this.button_Supprimer_Personne.UseVisualStyleBackColor = true;
             this.button_Supprimer_Personne.Click += new System.EventHandler(this.button_Supprimer_Personne_Click);
+            // 
+            // comboBox_Personne_Delete
+            // 
+            this.comboBox_Personne_Delete.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Personne_Delete.FormattingEnabled = true;
+            this.comboBox_Personne_Delete.Location = new System.Drawing.Point(291, 172);
+            this.comboBox_Personne_Delete.Name = "comboBox_Personne_Delete";
+            this.comboBox_Personne_Delete.Size = new System.Drawing.Size(193, 24);
+            this.comboBox_Personne_Delete.TabIndex = 6;
             // 
             // button_CreerPersonne
             // 
@@ -242,6 +268,7 @@ namespace T.P6
             this.button_envoyerAbo.TabIndex = 12;
             this.button_envoyerAbo.Text = "Abonner";
             this.button_envoyerAbo.UseVisualStyleBackColor = true;
+            this.button_envoyerAbo.Click += new System.EventHandler(this.button_envoyerAbo_Click);
             // 
             // label_topicPersonne
             // 
@@ -254,6 +281,15 @@ namespace T.P6
             this.label_topicPersonne.Text = "Personne";
             this.label_topicPersonne.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // comboBox_personneAbo
+            // 
+            this.comboBox_personneAbo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_personneAbo.FormattingEnabled = true;
+            this.comboBox_personneAbo.Location = new System.Drawing.Point(400, 47);
+            this.comboBox_personneAbo.Name = "comboBox_personneAbo";
+            this.comboBox_personneAbo.Size = new System.Drawing.Size(193, 24);
+            this.comboBox_personneAbo.TabIndex = 10;
+            // 
             // label_topicAbo
             // 
             this.label_topicAbo.AutoSize = true;
@@ -265,15 +301,6 @@ namespace T.P6
             this.label_topicAbo.Text = "Topic";
             this.label_topicAbo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboBox_personneAbo
-            // 
-            this.comboBox_personneAbo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_personneAbo.FormattingEnabled = true;
-            this.comboBox_personneAbo.Location = new System.Drawing.Point(400, 47);
-            this.comboBox_personneAbo.Name = "comboBox_personneAbo";
-            this.comboBox_personneAbo.Size = new System.Drawing.Size(193, 24);
-            this.comboBox_personneAbo.TabIndex = 10;
-            // 
             // comboBox_topicAbo
             // 
             this.comboBox_topicAbo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -282,42 +309,6 @@ namespace T.P6
             this.comboBox_topicAbo.Name = "comboBox_topicAbo";
             this.comboBox_topicAbo.Size = new System.Drawing.Size(193, 24);
             this.comboBox_topicAbo.TabIndex = 7;
-            // 
-            // comboBox_Personne_Envoyer
-            // 
-            this.comboBox_Personne_Envoyer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_Personne_Envoyer.FormattingEnabled = true;
-            this.comboBox_Personne_Envoyer.Location = new System.Drawing.Point(41, 280);
-            this.comboBox_Personne_Envoyer.Name = "comboBox_Personne_Envoyer";
-            this.comboBox_Personne_Envoyer.Size = new System.Drawing.Size(193, 24);
-            this.comboBox_Personne_Envoyer.TabIndex = 8;
-            // 
-            // comboBox_Personne_Delete
-            // 
-            this.comboBox_Personne_Delete.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_Personne_Delete.FormattingEnabled = true;
-            this.comboBox_Personne_Delete.Location = new System.Drawing.Point(291, 172);
-            this.comboBox_Personne_Delete.Name = "comboBox_Personne_Delete";
-            this.comboBox_Personne_Delete.Size = new System.Drawing.Size(193, 24);
-            this.comboBox_Personne_Delete.TabIndex = 6;
-            // 
-            // comboBox_Topic_Envoyer
-            // 
-            this.comboBox_Topic_Envoyer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_Topic_Envoyer.FormattingEnabled = true;
-            this.comboBox_Topic_Envoyer.Location = new System.Drawing.Point(280, 280);
-            this.comboBox_Topic_Envoyer.Name = "comboBox_Topic_Envoyer";
-            this.comboBox_Topic_Envoyer.Size = new System.Drawing.Size(193, 24);
-            this.comboBox_Topic_Envoyer.TabIndex = 5;
-            // 
-            // comboBox_Topic_Delete
-            // 
-            this.comboBox_Topic_Delete.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_Topic_Delete.FormattingEnabled = true;
-            this.comboBox_Topic_Delete.Location = new System.Drawing.Point(31, 172);
-            this.comboBox_Topic_Delete.Name = "comboBox_Topic_Delete";
-            this.comboBox_Topic_Delete.Size = new System.Drawing.Size(193, 24);
-            this.comboBox_Topic_Delete.TabIndex = 3;
             // 
             // Form1
             // 
@@ -356,8 +347,6 @@ namespace T.P6
         //private System.Windows.Forms.ComboBox comboBox_Topic_Delete;
         private System.Windows.Forms.Button button_Envoyer_Topic;
         private System.Windows.Forms.Label label_Topic;
-        //private System.Windows.Forms.ComboBox comboBox_Topic_Envoyer;
-        private System.Windows.Forms.Button button_Envoyer_Personne;
         private System.Windows.Forms.Label label_Personne;
         //private System.Windows.Forms.ComboBox comboBox_Personne_Envoyer;
         private System.Windows.Forms.Button button_Supprimer_Personne;

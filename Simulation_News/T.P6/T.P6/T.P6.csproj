@@ -45,7 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Args\Args.cs" />
+    <Compile Include="Args\ArgsCBB.cs" />
+    <Compile Include="Args\ArgsAbo.cs" />
     <Compile Include="Handler\ComboBoxHandler.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -73,6 +74,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Objets\News.cs" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

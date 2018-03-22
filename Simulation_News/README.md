@@ -125,5 +125,8 @@ Exécuter le projet avec l'IDE `Visual Studio`
 |:---:|:---:|:---:|
 | _07/03/2018_ | **[0.0] DEV** | **50** |
 | _18/03/2018_ | **[0.1] DEV** | **70** |
+| _22/03/2018_ | **[1.0] PROD** | **100**|
 
-Dernière modification le _18/03/2018, 21h30_
+### [TERMINÉ]
+
+Dernière modification le _22/03/2018, 01h08_

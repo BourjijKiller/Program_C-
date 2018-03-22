@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using T.P6.Factory;
+using T.P6.Objets;
 
 namespace T.P6
 {
@@ -159,6 +161,65 @@ namespace T.P6
                 this.pf.supprimerUnePersonne(this.comboBox_Personne_Delete.SelectedItem);
             else
                 MessageBox.Show("Merci de sélectionner une personne !", "ERREUR SUPPR PERSONNE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        /// <summary>
+        /// Abonnement d'un topic sur une personne spécifique   
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button_envoyerAbo_Click(object sender, EventArgs e)
+        {
+            if (this.comboBox_personneAbo.SelectedItem != null && this.comboBox_topicAbo.SelectedItem != null)
+            {
+                Topic topic = (Topic)this.comboBox_topicAbo.SelectedItem;
+                Personne personne = (Personne)this.comboBox_personneAbo.SelectedItem;
+                topic.onEnvoyerNews += personne.receiveNews;
+                MessageBox.Show(personne.personne + " a bien été abonnée !", "SUCCESS ABO PERSONNE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+                MessageBox.Show("Merci de sélectionner une personne et un topic pour l'abonnement !", "ERREUR ABO PERSONNE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        /// <summary>
+        /// Enregistrement de la news dans le topic sélectionné par déclenchement d'événement
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button_Envoyer_Topic_Click(object sender, EventArgs e)
+        {
+           if(!String.IsNullOrEmpty(this.richTextBox_Topic.Text) && this.comboBox_Topic_Envoyer.SelectedItem != null)
+           {
+                Topic topic = (Topic)this.comboBox_Topic_Envoyer.SelectedItem;
+                topic.envoyerNews(this.richTextBox_Topic.Text);
+                MessageBox.Show("News bien enregistrée dans le topic " + topic.topic, "SUCCESS ABO TOPIC", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.actualiserAffichageNews();
+           }
+           else
+           {
+                MessageBox.Show("Merci de renseigner le champ texte du Topic et/ou sélectionner un topic !", "ERREUR ABO TOPIC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+           }
+        }
+
+        /// <summary>
+        /// Met à jour l'affichage des news selon la personne sélectionné et l'abonnement
+        /// </summary>
+        private void actualiserAffichageNews()
+        {
+            this.richTextBox_Topic.Text = null;
+            this.richTextBox_Personne.Text = null;
+            if (this.comboBox_Personne_Envoyer.SelectedItem != null)
+                this.richTextBox_Personne.Text = ((Personne)this.comboBox_Personne_Envoyer.SelectedItem).getNews();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void comboBox_Personne_Envoyer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.actualiserAffichageNews();
         }
     }
 }

@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using T.P6.Args;
+using T.P6.Objets;
 
-namespace T.P6
+namespace T.P6.Factory
 {
     class PersonneFactory
     {
         /// <summary>
         ///  Déclaration des événements pour en informer les ComboBoxs
         /// </summary>
-        public event EventHandler<Args> onAjouterPersonne;
-        public event EventHandler<Args> onSupprimerPersonne;
+        public event EventHandler<ArgsCBB> onAjouterPersonne;
+        public event EventHandler<ArgsCBB> onSupprimerPersonne;
 
 
         private List<Personne> personneFactory;
@@ -33,7 +35,7 @@ namespace T.P6
         {
             Personne personne = new Personne(nomPersonne);
             this.personneFactory.Add(personne);
-            Args args = new Args(personne);
+            ArgsCBB args = new ArgsCBB(personne);
             onAjouterPersonne(this, args);
         }
 
@@ -43,7 +45,7 @@ namespace T.P6
         /// <param name="personne"></param>
         public void supprimerUnePersonne(Object personne)
         {
-            Args args = new Args(personne);
+            ArgsCBB args = new ArgsCBB(personne);
             onSupprimerPersonne(this, args);
             this.personneFactory.Remove((Personne)personne);
         }
